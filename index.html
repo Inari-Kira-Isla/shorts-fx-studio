@@ -13,9 +13,9 @@
     --txt:#eee; --dim:#8a8a93; --line:#2a2a32; --ok:#39d98a;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html,body{background:var(--bg);color:var(--txt);font-family:"PingFang TC","Noto Sans TC","Hiragino Sans",-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+  html,body{background:var(--bg);color:var(--txt);font-family:var(--font,"PingFang TC","Noto Sans TC","Hiragino Sans",-apple-system,sans-serif);-webkit-font-smoothing:antialiased;transition:background .3s}
   a{color:var(--gold-l)}
-  header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#0a0a0cf2 70%,#0a0a0c00);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:16px 22px 12px}
+  header{position:sticky;top:0;z-index:50;background:var(--bg2);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:16px 22px 12px}
   .brand{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
   .brand h1{font-size:24px;font-weight:800;letter-spacing:.5px;background:linear-gradient(90deg,var(--gold),var(--gold-l),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
   .brand .sub{color:var(--dim);font-size:12.5px}
@@ -663,6 +663,27 @@ document.getElementById("gen").onclick=()=>{
 document.getElementById("mclose").onclick=()=>document.getElementById("modal").classList.remove("on");
 document.getElementById("copy").onclick=()=>{const ta=document.getElementById("out");ta.select();try{document.execCommand("copy");}catch(e){}navigator.clipboard&&navigator.clipboard.writeText(ta.value);document.getElementById("copy").textContent="✓ 已複製";setTimeout(()=>document.getElementById("copy").textContent="複製到剪貼簿",1500);};
 document.getElementById("modal").onclick=e=>{if(e.target.id==="modal")e.target.classList.remove("on");};
+
+/* ===== 風格主題切換 ===== */
+const THEMES={
+ gold:{n:"黑金 Luxury",v:{"--bg":"#08080a","--bg2":"#101013","--card":"#16161b","--card2":"#1c1c22","--gold":"#d4af37","--gold-l":"#f0c75e","--gold-d":"#9c7c1e","--txt":"#eee","--dim":"#8a8a93","--line":"#2a2a32","--font":'"PingFang TC","Noto Sans TC",sans-serif'}},
+ jp:{n:"日系清新",v:{"--bg":"#efe7d8","--bg2":"#e9dfcd","--card":"#fbf6ec","--card2":"#f3ecdd","--gold":"#c98a4e","--gold-l":"#d99f5e","--gold-d":"#a8763a","--txt":"#5b4a3a","--dim":"#9a8a72","--line":"#e2d6bf","--font":'"Hiragino Maru Gothic ProN","PingFang TC",sans-serif'}},
+ kr:{n:"韓系清新",v:{"--bg":"#f5f1ee","--bg2":"#ece5e0","--card":"#fffdfc","--card2":"#f6f0ec","--gold":"#c99a92","--gold-l":"#d9aaa0","--gold-d":"#a87a72","--txt":"#4a4441","--dim":"#9a8f88","--line":"#e6ded8","--font":'"Hiragino Sans","PingFang TC",sans-serif'}},
+ us:{n:"美式爆量",v:{"--bg":"#0a0a0a","--bg2":"#121212","--card":"#181818","--card2":"#202020","--gold":"#ffe14d","--gold-l":"#fff04d","--gold-d":"#c9a800","--txt":"#ffffff","--dim":"#9a9a9a","--line":"#333333","--font":'"Arial Black","PingFang TC",sans-serif'}},
+ y2k:{n:"Y2K 千禧",v:{"--bg":"#190a2e","--bg2":"#23123f","--card":"#2a1547","--card2":"#341a55","--gold":"#ff5ed4","--gold-l":"#5ed4ff","--gold-d":"#b03c9a","--txt":"#ffffff","--dim":"#b69fd0","--line":"#5a3c8a","--font":'"PingFang TC",sans-serif'}},
+ academia:{n:"暗黑學院",v:{"--bg":"#1b1712","--bg2":"#241f18","--card":"#2a241c","--card2":"#332c22","--gold":"#b6925a","--gold-l":"#d0ad6e","--gold-d":"#8a6c3e","--txt":"#e9e0cf","--dim":"#9c9079","--line":"#3a3226","--font":'Georgia,"Songti TC",serif'}},
+ cyber:{n:"科技 Cyber",v:{"--bg":"#04090f","--bg2":"#0a1420","--card":"#0c1a2a","--card2":"#122436","--gold":"#00e5ff","--gold-l":"#ff2d95","--gold-d":"#0a8aa0","--txt":"#cfeaff","--dim":"#6f95b0","--line":"#143048","--font":'"PingFang TC",monospace'}},
+ retro:{n:"復古菲林",v:{"--bg":"#1e1a13","--bg2":"#28221a","--card":"#2c2519","--card2":"#352d20","--gold":"#e0a85e","--gold-l":"#f0c478","--gold-d":"#a8783e","--txt":"#f0e6d2","--dim":"#a89a7e","--line":"#48402e","--font":'"Courier New","PingFang TC",monospace'}},
+};
+function applyTheme(k){const t=THEMES[k]||THEMES.gold;const r=document.documentElement.style;Object.entries(t.v).forEach(([p,val])=>r.setProperty(p,val));try{localStorage.setItem("fxtheme",k)}catch(e){}}
+const themeSel=document.createElement("select");
+themeSel.style.cssText="background:var(--card);border:1px solid var(--line);color:var(--txt);padding:7px 11px;border-radius:9px;font-size:13px;cursor:pointer;outline:none";
+Object.entries(THEMES).forEach(([k,t])=>{const o=document.createElement("option");o.value=k;o.textContent="風格："+t.n;themeSel.appendChild(o);});
+themeSel.onchange=e=>applyTheme(e.target.value);
+document.querySelector(".tools").prepend(themeSel);
+let savedTheme="gold";try{savedTheme=localStorage.getItem("fxtheme")||"gold"}catch(e){}
+themeSel.value=savedTheme;applyTheme(savedTheme);
+
 render();
 </script>
 </body>
