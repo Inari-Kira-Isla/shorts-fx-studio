@@ -128,7 +128,12 @@ const CATS = {
   FL:{ic:"📼", name:"質感・濾鏡", en:"Texture & Film Looks", desc:"菲林顆粒/掃描線/VHS"},
   CL:{ic:"🎨", name:"調色", en:"Color Grading", desc:"電影感色調 / LUT"},
   IM:{ic:"🖼️", name:"圖片介紹", en:"Image Intros", desc:"插入真實圖：產品/地圖/人物"},
-  AI:{ic:"🤖", name:"AI 趨勢效果", en:"AI Trending 2026", tag:"HOT", desc:"Cakeify/Squish/充氣等病毒效果"},
+  AI:{ic:"🤖", name:"AI 趨勢效果", en:"AI Trending 2026", tag:"HOT", desc:"Cakeify/公仔化/動漫等病毒效果"},
+  SC:{ic:"📱", name:"社群 UI / CTA", en:"Social & CTA", tag:"NEW", desc:"訂閱/讚/留言/倒數/進度條"},
+  AN:{ic:"✏️", name:"標註・重點", en:"Annotation", tag:"NEW", desc:"箭頭/圈重點/對話框/馬賽克"},
+  D3:{ic:"🧊", name:"3D・空間", en:"3D & Space", desc:"立體字/視差/環繞/碎裂"},
+  DV:{ic:"📊", name:"數據視覺", en:"Data Viz", desc:"長條競賽/圓餅/折線/大數字"},
+  BG:{ic:"🌌", name:"動態背景", en:"Animated BG", desc:"Matrix/粒子/漸變/星空/極光"},
   AU:{ic:"🎵", name:"音樂・音效", en:"Audio", desc:"BGM / 音效 / 音浪"},
 };
 
@@ -231,6 +236,89 @@ const FX = [
   {c:"AU",id:"bgm",n:"BGM 鋪底",en:"Background Music",rec:1,r:"bgm",d:"stream_loop 鋪底+混音。"},
   {c:"AU",id:"sfx",n:"Pop / Whoosh 音效",en:"SFX Hits",r:"sfx",d:"pop/whoosh 對位動作。"},
   {c:"AU",id:"waveform",n:"音浪視覺化",en:"Audio Waveform",r:"waveform",d:"音波跳動條，音樂向。"},
+  // ── TX 追加
+  {c:"TX",id:"gradtext",n:"漸變彩字",en:"Gradient Text",r:"gradtext",d:"彩虹漸變流動字。"},
+  {c:"TX",id:"outline",n:"空心描邊字",en:"Outline Stroke",r:"outline",d:"空心字填色出場。"},
+  {c:"TX",id:"marquee",n:"跑馬燈",en:"Marquee",r:"marquee",d:"橫向滾動字幕。"},
+  {c:"TX",id:"emojirain",n:"Emoji 雨",en:"Emoji Rain",r:"emojirain",d:"emoji 灑落鋪滿。"},
+  // ── TR 追加
+  {c:"TR",id:"shattertrans",n:"碎裂轉場",en:"Shatter",isnew:1,r:"shattertrans",d:"畫面碎開切換。"},
+  {c:"TR",id:"inkbleed",n:"墨水擴散",en:"Ink Bleed",r:"inkbleed",d:"墨漬擴散切換。"},
+  {c:"TR",id:"filmburn",n:"火燒菲林",en:"Film Burn",r:"filmburn",d:"膠片燃燒切換。"},
+  {c:"TR",id:"mosaictrans",n:"馬賽克轉場",en:"Mosaic",r:"mosaictrans",d:"打格散開切換。"},
+  {c:"TR",id:"roll",n:"捲動轉場",en:"Roll",r:"roll",d:"上下捲動切換。"},
+  // ── CM 追加
+  {c:"CM",id:"dollyzoom",n:"眩暈變焦",en:"Dolly Zoom",isnew:1,r:"dollyzoom",d:"主體不變背景縮放，希治閣式。"},
+  {c:"CM",id:"pushin",n:"推進鏡頭",en:"Push In",r:"pushin",d:"慢慢推近，強調情緒。"},
+  {c:"CM",id:"datamosh",n:"Datamosh",en:"Datamosh",isnew:1,r:"datamosh",d:"數據損毀故障美學。"},
+  // ── LT 追加
+  {c:"LT",id:"strobe",n:"頻閃 Strobe",en:"Strobe",r:"strobe",d:"快速閃光，派對能量。"},
+  // ── PT 追加
+  {c:"PT",id:"fireworks",n:"煙花",en:"Fireworks",rec:1,r:"fireworks",d:"煙花綻放，慶祝。"},
+  {c:"PT",id:"sakura",n:"櫻花飄落",en:"Sakura Petals",r:"sakura",d:"粉櫻花瓣，日系。"},
+  {c:"PT",id:"leaves",n:"落葉",en:"Falling Leaves",r:"leaves",d:"秋葉飄落。"},
+  {c:"PT",id:"coins",n:"金幣雨",en:"Coin Rain",r:"coins",d:"金幣灑落，財富/促銷。"},
+  {c:"PT",id:"hearts",n:"愛心飄浮",en:"Hearts",r:"hearts",d:"愛心上升，溫馨。"},
+  {c:"PT",id:"stars",n:"星星閃爍",en:"Twinkle Stars",r:"stars",d:"星光閃爍。"},
+  // ── FL 追加
+  {c:"FL",id:"chromatic",n:"色差 Aberration",en:"Chromatic",r:"chromatic",d:"RGB 邊緣分離。"},
+  {c:"FL",id:"duotone",n:"雙色調",en:"Duotone",r:"duotone",d:"兩色映射，潮海報。"},
+  {c:"FL",id:"posterize",n:"色調分離",en:"Posterize",r:"posterize",d:"色階壓縮，海報感。"},
+  {c:"FL",id:"nightvision",n:"夜視鏡",en:"Night Vision",r:"nightvision",d:"綠色夜視+掃描。"},
+  {c:"FL",id:"ascii",n:"ASCII 字元畫",en:"ASCII Art",isnew:1,r:"ascii",d:"字元組成畫面。"},
+  {c:"FL",id:"thermal",n:"熱成像",en:"Thermal",r:"thermal",d:"紅外熱感色。"},
+  // ── CL 追加
+  {c:"CL",id:"cyberpunk",n:"賽博龐克",en:"Cyberpunk",rec:1,r:"cyberpunk",d:"洋紅青藍霓虹調。"},
+  {c:"CL",id:"pastel",n:"粉彩夢幻",en:"Pastel Dream",r:"pastel",d:"低飽和粉嫩。"},
+  {c:"CL",id:"bleach",n:"漂白風",en:"Bleach Bypass",r:"bleach",d:"高對比低飽和，硬朗。"},
+  {c:"CL",id:"crossprocess",n:"交叉沖洗",en:"Cross Process",r:"crossprocess",d:"偏色復古菲林。"},
+  {c:"CL",id:"matrixgreen",n:"駭客綠",en:"Matrix Green",r:"matrixgreen",d:"數位綠色調。"},
+  // ── AI 追加
+  {c:"AI",id:"figurine",n:"公仔化 Figurine",en:"3D Figurine",rec:1,isnew:1,r:"figurine",d:"變盒裝收藏公仔，2026 爆紅。"},
+  {c:"AI",id:"plush",n:"毛公仔化",en:"Plush Toy",isnew:1,r:"plush",d:"變毛絨玩具，可愛風。"},
+  {c:"AI",id:"claymation",n:"黏土動畫",en:"Claymation",isnew:1,r:"claymation",d:"黏土定格質感。"},
+  {c:"AI",id:"animefilter",n:"動漫濾鏡",en:"Anime Filter",isnew:1,r:"animefilter",d:"真實轉動漫畫風。"},
+  {c:"AI",id:"statue",n:"雕像化",en:"Statue",isnew:1,r:"statue",d:"變大理石雕像。"},
+  {c:"AI",id:"facemorph",n:"換臉變形",en:"Face Morph",isnew:1,r:"facemorph",d:"臉部融合變換。"},
+  // ── SC 社群 UI / CTA
+  {c:"SC",id:"subscribe",n:"訂閱按鈕",en:"Subscribe CTA",rec:1,r:"subscribe",d:"紅色訂閱鍵脈動+點擊。"},
+  {c:"SC",id:"likebomb",n:"讚爆",en:"Like Bomb",rec:1,r:"likebomb",d:"👍❤️🔥 狂噴上升。"},
+  {c:"SC",id:"comment",n:"留言彈窗",en:"Comment Popup",r:"comment",d:"留言由下逐條彈入。"},
+  {c:"SC",id:"follow",n:"追蹤提示",en:"Follow Card",r:"follow",d:"頭像+追蹤鍵彈出。"},
+  {c:"SC",id:"progressbar",n:"進度條",en:"Progress Bar",rec:1,r:"progressbar",d:"進度填充+百分比。"},
+  {c:"SC",id:"countdown",n:"倒數計時",en:"Countdown",rec:1,r:"countdown",d:"3-2-1-GO 倒數。"},
+  {c:"SC",id:"hashtag",n:"Hashtag 標籤",en:"Hashtag",r:"hashtag",d:"#標籤 彈跳出場。"},
+  {c:"SC",id:"swipeup",n:"Swipe Up 提示",en:"Swipe Up",r:"swipeup",d:"上滑手勢提示。"},
+  {c:"SC",id:"rating",n:"評分星星",en:"Star Rating",r:"rating",d:"五星逐顆亮起。"},
+  {c:"SC",id:"share",n:"分享 / 收藏",en:"Share",r:"share",d:"分享鍵 +1 動畫。"},
+  // ── AN 標註・重點
+  {c:"AN",id:"arrow",n:"箭頭指示",en:"Arrow Pointer",rec:1,r:"arrow",d:"手繪箭頭指向重點。"},
+  {c:"AN",id:"circlehl",n:"圈重點",en:"Circle Highlight",rec:1,r:"circlehl",d:"手繪圈圈標記。"},
+  {c:"AN",id:"underline",n:"劃底線",en:"Underline",r:"underline",d:"手繪底線強調。"},
+  {c:"AN",id:"boxhl",n:"方框標記",en:"Box Highlight",r:"boxhl",d:"框住重點區域。"},
+  {c:"AN",id:"speech",n:"對話氣泡",en:"Speech Bubble",r:"speech",d:"對白氣泡彈出。"},
+  {c:"AN",id:"callout",n:"標籤連線",en:"Callout Line",r:"callout",d:"指點+說明標籤。"},
+  {c:"AN",id:"mosaic",n:"馬賽克遮擋",en:"Mosaic Blur",r:"mosaic",d:"打格遮敏感部分。"},
+  {c:"AN",id:"tap",n:"點擊提示",en:"Tap Indicator",r:"tap",d:"手指點擊漣漪。"},
+  // ── D3 3D・空間
+  {c:"D3",id:"extrude3d",n:"3D 立體字",en:"3D Extrude",rec:1,r:"extrude3d",d:"立體擠出字旋轉。"},
+  {c:"D3",id:"parallax",n:"視差景深",en:"Parallax Depth",rec:1,r:"parallax",d:"前中後景分層移動。"},
+  {c:"D3",id:"orbit",n:"鏡頭環繞",en:"Orbit",r:"orbit",d:"物件 3D 軌道環繞。"},
+  {c:"D3",id:"shatter",n:"玻璃碎裂",en:"Glass Shatter",isnew:1,r:"shatter",d:"畫面碎裂飛散。"},
+  {c:"D3",id:"cardstack",n:"立體疊卡",en:"Card Stack",r:"cardstack",d:"卡片扇形堆疊。"},
+  // ── DV 數據視覺
+  {c:"DV",id:"barrace",n:"長條競賽",en:"Bar Race",rec:1,r:"barrace",d:"排名長條生長。"},
+  {c:"DV",id:"piegrow",n:"圓餅生長",en:"Pie Grow",r:"piegrow",d:"圓餅圖填充。"},
+  {c:"DV",id:"linegraph",n:"折線生長",en:"Line Graph",r:"linegraph",d:"折線逐段畫出。"},
+  {c:"DV",id:"bigstat",n:"大數字強調",en:"Big Stat",rec:1,r:"bigstat",d:"百分比大字滾動。"},
+  {c:"DV",id:"ringprogress",n:"百分比環",en:"Ring Progress",r:"ringprogress",d:"環形進度填充。"},
+  // ── BG 動態背景
+  {c:"BG",id:"matrix",n:"Matrix 數字雨",en:"Matrix Rain",r:"matrix",d:"綠色字元瀑布。"},
+  {c:"BG",id:"particlefield",n:"粒子場",en:"Particle Field",r:"particlefield",d:"光點漂浮網絡。"},
+  {c:"BG",id:"gradientflow",n:"漸變流動",en:"Gradient Flow",rec:1,r:"gradientflow",d:"彩色漸變流動底。"},
+  {c:"BG",id:"gridscan",n:"網格掃描",en:"Grid Scan",r:"gridscan",d:"科技透視網格+掃描線。"},
+  {c:"BG",id:"starfield",n:"星空穿越",en:"Starfield",r:"starfield",d:"星點向外飛馳。"},
+  {c:"BG",id:"aurora",n:"極光",en:"Aurora",r:"aurora",d:"流動極光光帶。"},
 ];
 
 /* ============ 預覽渲染器 ============ */
@@ -349,6 +437,105 @@ R.ghibli=el=>{const a=scene(el,"🏞️");const a2=scene(el,"🌄");a2.style.css
 R.bgm=el=>{const w=mk(el,"div");w.style.cssText="display:flex;gap:5px;align-items:flex-end;height:58px";const bars=[];for(let i=0;i<9;i++){const b=mk(w,"div");b.style.cssText="width:7px;height:12px;background:linear-gradient(var(--gold-l),var(--gold-d));border-radius:3px";bars.push(b);}const tl=gsap.timeline(loop);bars.forEach((b,i)=>tl.to(b,{height:(15+(i*53%45))+"px",duration:.3,yoyo:true,repeat:3,ease:"sine.inOut"},i*.05));return tl;};
 R.sfx=el=>{const a=mk(el,"div");a.textContent="🔊";a.style.fontSize="38px";const ring=mk(el,"div");ring.style.cssText="position:absolute;width:58px;height:58px;border-radius:50%;border:2px solid var(--gold-l)";return gsap.timeline(loop).fromTo(a,{scale:.6,opacity:0},{scale:1,opacity:1,duration:.25,ease:"back.out(3)"}).fromTo(ring,{scale:.5,opacity:.9},{scale:2.2,opacity:0,duration:.7},"<").to(a,{scale:.6,opacity:0,duration:.3,delay:.7});};
 R.waveform=el=>{const w=mk(el,"div");w.style.cssText="display:flex;gap:3px;align-items:center;height:60px";const bars=[];for(let i=0;i<22;i++){const b=mk(w,"div");b.style.cssText="width:4px;height:8px;background:var(--gold-l);border-radius:2px";bars.push(b);}const tl=gsap.timeline(loop);bars.forEach((b,i)=>tl.to(b,{height:rnd(8,52)+"px",duration:.25,yoyo:true,repeat:5,ease:"sine.inOut"},i*.02));return tl;};
+
+/* ===== 擴充批次 ===== */
+function emojiFloat(arr,o){o=o||{};return el=>{if(o.bg)scene(el,"",o.bg);const tl=gsap.timeline(loop);for(let i=0;i<(o.n||14);i++){const e=mk(el,"div");e.textContent=arr[i%arr.length];e.style.cssText=`position:absolute;font-size:${rnd(o.min||16,o.max||30)}px;left:${rnd(5,90)}%;${o.down?"top:-12%":"top:104%"};opacity:0`;tl.fromTo(e,{y:0,opacity:1,scale:.6},{y:o.down?180:-rnd(120,170),x:rnd(-30,30),opacity:0,scale:1,rotation:rnd(-40,40),duration:rnd(1.4,2.4),ease:"power1.out"},rnd(0,o.stagger||1.6));}return tl;};}
+
+/* — TX 追加 — */
+R.gradtext=el=>{const a=mk(el,"div","d-txt");a.textContent="RAINBOW";a.style.cssText+=";background:linear-gradient(90deg,#ff5ed4,#ffd24a,#5ed4ff,#39d98a,#ff5ed4);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;font-size:24px";return gsap.timeline(loop).fromTo(a,{backgroundPosition:"0% 0",opacity:0,scale:.9},{backgroundPosition:"300% 0",opacity:1,scale:1,duration:2.6,ease:"none"});};
+R.outline=el=>{const a=mk(el,"div");a.textContent="OUTLINE";a.style.cssText="font-size:25px;font-weight:900;color:transparent;-webkit-text-stroke:2px var(--gold-l)";return gsap.timeline(loop).fromTo(a,{opacity:0,letterSpacing:"12px"},{opacity:1,letterSpacing:"1px",duration:.7}).to(a,{color:"var(--gold-l)",duration:.4,delay:.2}).to(a,{opacity:0,delay:.8,duration:.3}).set(a,{color:"transparent"});};
+R.marquee=el=>{const a=mk(el,"div");a.style.cssText="position:absolute;white-space:nowrap;font-size:21px;font-weight:800;color:var(--gold-l)";a.textContent="★ 限時優惠 ★ 全店 5 折 ★ 今日截止 ★";return gsap.timeline({repeat:-1}).fromTo(a,{x:280},{x:-280,duration:4,ease:"none"});};
+R.emojirain=emojiFloat(["🍣","🦀","🦐","🐟","🍱"],{n:16,down:true,bg:"linear-gradient(135deg,#1a2230,#0a0e16)",stagger:1.4,min:18,max:30});
+
+/* — TR 追加 — */
+R.shattertrans=el=>{const[A,B]=twoScene(el);gsap.set(B,{opacity:1});const tl=gsap.timeline(loop);tl.to({},{duration:.5});for(let i=0;i<10;i++){const p=mk(el,"div");p.style.cssText=`position:absolute;left:${(i%5)*20}%;top:${i<5?0:50}%;width:20%;height:50%;background:linear-gradient(135deg,#2a3a4a,#10161e);display:flex;align-items:center;justify-content:center;font-size:22px;z-index:2`;p.textContent="🍣";tl.to(p,{x:rnd(-80,80),y:rnd(60,140),rotation:rnd(-90,90),opacity:0,duration:.8,ease:"power2.in"},.5+i*.02);}tl.set(A,{opacity:0},.5).to({},{duration:.6});return tl;};
+R.inkbleed=el=>{const[A,B]=twoScene(el);gsap.set(B,{clipPath:"circle(0% at 30% 60%)"});return gsap.timeline(loop).to(B,{clipPath:"circle(90% at 30% 60%)",duration:1.1,ease:"power2.in",delay:.5}).to({},{duration:.6}).set(B,{clipPath:"circle(0% at 30% 60%)"});};
+R.filmburn=el=>{const[A,B]=twoScene(el);gsap.set(B,{opacity:0});const burn=mk(el,"div");burn.style.cssText="position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,#ff6a00,#7a1500 40%,transparent 62%);opacity:0;mix-blend-mode:screen";return gsap.timeline(loop).to(burn,{opacity:1,scale:1.6,duration:.5,delay:.5}).set(B,{opacity:1},"-=.1").to(burn,{opacity:0,duration:.5}).to({},{duration:.6}).set(B,{opacity:0}).set(burn,{scale:1});};
+R.mosaictrans=el=>{const[A,B]=twoScene(el);gsap.set(B,{opacity:0});return gsap.timeline(loop).to(A,{filter:"blur(8px) contrast(2)",scale:1.05,opacity:0,duration:.5,delay:.5}).set(B,{opacity:1}).to({},{duration:.7}).set(A,{filter:"none",scale:1,opacity:1}).set(B,{opacity:0});};
+R.roll=el=>{const[A,B]=twoScene(el);gsap.set(B,{yPercent:100});return gsap.timeline(loop).to(A,{yPercent:-100,duration:.7,ease:"power2.inOut",delay:.5}).to(B,{yPercent:0,duration:.7,ease:"power2.inOut"},"<").to({},{duration:.6}).set(A,{yPercent:0}).set(B,{yPercent:100});};
+
+/* — CM 追加 — */
+R.dollyzoom=el=>{const bg=scene(el,"","linear-gradient(#2a3a5a,#10182a)");const s=mk(el,"div");s.textContent="🧍";s.style.cssText="position:absolute;font-size:44px";return gsap.timeline(loop).fromTo(bg,{scale:1},{scale:1.7,duration:1.6,yoyo:true,repeat:1,ease:"sine.inOut"},0);};
+R.pushin=el=>{const a=scene(el,"😮");return gsap.timeline(loop).fromTo(a,{scale:1},{scale:1.5,duration:1.6,ease:"power1.inOut"}).to(a,{scale:1,duration:1,delay:.4});};
+R.datamosh=el=>{const a=scene(el,"🌀");const tl=gsap.timeline(loop);for(let i=0;i<10;i++)tl.set(a,{x:rnd(-10,10),y:rnd(-6,6),filter:`hue-rotate(${rnd(0,360)}deg) saturate(2) blur(${rnd(0,3)}px)`,skewX:rnd(-6,6)},i*.1);tl.set(a,{x:0,y:0,filter:"none",skewX:0}).to({},{duration:.5});return tl;};
+
+/* — LT 追加 — */
+R.strobe=el=>{const a=scene(el,"🕺");const f=mk(el,"div");f.style.cssText="position:absolute;inset:0;background:#fff;opacity:0";const tl=gsap.timeline(loop);for(let i=0;i<8;i++)tl.to(f,{opacity:.85,duration:.04,yoyo:true,repeat:1},i*.16);tl.to({},{duration:.4});return tl;};
+
+/* — PT 追加 — */
+R.fireworks=el=>{scene(el,"","#080612");const tl=gsap.timeline(loop);for(let burst=0;burst<2;burst++){const cx=rnd(30,70),cy=rnd(25,48),col=["#ffd24a","#ff5ed4","#5ed4ff","#39d98a"][burst%4];for(let i=0;i<14;i++){const p=mk(el,"div");p.style.cssText=`position:absolute;left:${cx}%;top:${cy}%;width:4px;height:4px;border-radius:50%;background:${col};box-shadow:0 0 6px ${col};opacity:0`;const ang=i/14*Math.PI*2;tl.fromTo(p,{x:0,y:0,opacity:1},{x:Math.cos(ang)*rnd(40,70),y:Math.sin(ang)*rnd(40,70)+20,opacity:0,duration:1,ease:"power2.out"},burst*1.1);}}return tl;};
+R.sakura=particles({n:22,col:["#ffc2dd","#ffd6e8","#ffb3d0"],round:1,min:6,max:12,drift:70,spin:1,dmin:2,dmax:3.5,stagger:2,fade:1,bg:"linear-gradient(135deg,#2a2230,#14101a)",emoji:"🌸"});
+R.leaves=emojiFloat(["🍂","🍁"],{n:14,down:true,bg:"linear-gradient(135deg,#2a2418,#15120a)",stagger:1.8});
+R.coins=emojiFloat(["🪙","💰"],{n:14,down:true,bg:"linear-gradient(135deg,#2a2410,#15120a)",stagger:1.4,min:18,max:30});
+R.hearts=emojiFloat(["❤️","💕","💖"],{n:16,bg:"linear-gradient(0deg,#2a1018,#150810)",stagger:1.4});
+R.stars=particles({n:18,col:["#fff7d0","#ffe070"],round:1,glow:1,min:3,max:6,top:`${rnd(5,80)}%`,drift:4,dmin:.8,dmax:1.6,stagger:1.6,twinkle:1,up:0,fade:1,bg:"linear-gradient(135deg,#0a0e22,#05070f)",emoji:"⭐"});
+
+/* — FL 追加 — */
+R.chromatic=el=>{const a=mk(el,"div","d-txt");a.textContent="ABERRATION";a.style.cssText+=";font-size:19px;color:#ddd";return gsap.timeline(loop).fromTo(a,{textShadow:"0 0 #f00,0 0 #0ff"},{textShadow:"-4px 0 #f00,4px 0 #0ff",duration:1,yoyo:true,repeat:1,ease:"sine.inOut"});};
+R.duotone=grade("grayscale(1) contrast(1.2)","linear-gradient(135deg,#3b1e7a,#ff2d75)","🏙️");
+R.posterize=el=>{const a=scene(el,"🌅");return gsap.timeline(loop).fromTo(a,{filter:"contrast(1) saturate(1)"},{filter:"contrast(2.6) saturate(2.2) brightness(1.1)",duration:1.4,yoyo:true,repeat:1,ease:"steps(4)"});};
+R.nightvision=el=>{const a=scene(el,"🌲");a.style.filter="brightness(1.3) sepia(1) hue-rotate(50deg) saturate(4) contrast(1.2)";const s=mk(el,"div");s.style.cssText="position:absolute;inset:0;background:repeating-linear-gradient(#0000 0 2px,#0f04 2px 4px)";const v=mk(el,"div");v.style.cssText="position:absolute;inset:0;background:radial-gradient(circle,transparent 50%,#000a 100%)";return gsap.timeline(loop).fromTo(a,{filter:"brightness(.85) sepia(1) hue-rotate(50deg) saturate(4)"},{filter:"brightness(1.5) sepia(1) hue-rotate(50deg) saturate(4)",duration:1.5,yoyo:true,repeat:1,ease:"sine.inOut"});};
+R.ascii=el=>{const a=mk(el,"div");a.style.cssText="font-family:monospace;font-size:9px;line-height:9px;color:#39d98a;white-space:pre";const ch="@#%*+=-:. ";const gen=()=>Array.from({length:11},()=>Array.from({length:24},()=>ch[Math.floor(rnd(0,ch.length))]).join("")).join("\n");const tl=gsap.timeline(loop);for(let i=0;i<8;i++)tl.set(a,{textContent:gen()},i*.18);return tl;};
+R.thermal=grade("hue-rotate(150deg) saturate(4) contrast(1.5) brightness(1.1)","linear-gradient(135deg,#ff003c66,#ffcc0066)","🧍");
+
+/* — CL 追加 — */
+R.cyberpunk=grade("saturate(1.6) contrast(1.2)","linear-gradient(135deg,#ff2d9555,#00e5ff55)","🌃");
+R.pastel=grade("saturate(.8) brightness(1.1) contrast(.9)","linear-gradient(135deg,#ffd9ec66,#cfe9ff66)","🌸");
+R.bleach=grade("saturate(.4) contrast(1.4) brightness(1.1)",null,"🏜️");
+R.crossprocess=grade("saturate(1.4) contrast(1.2) hue-rotate(10deg)","linear-gradient(135deg,#00ffae44,#ffe60044)","🎞️");
+R.matrixgreen=grade("grayscale(1) brightness(1.1) sepia(1) hue-rotate(60deg) saturate(3)",null,"💻");
+
+/* — AI 追加 — */
+R.figurine=el=>{el.style.perspective="500px";const box=mk(el,"div");box.style.cssText="width:78px;height:104px;border:3px solid var(--gold-d);border-radius:8px;background:linear-gradient(160deg,#2a2a35,#14141a);display:flex;align-items:center;justify-content:center;font-size:36px;position:relative";box.textContent="🧍";const tag=mk(box,"div");tag.style.cssText="position:absolute;top:-1px;left:-1px;right:-1px;height:18px;background:var(--gold);border-radius:6px 6px 0 0;color:#1a1407;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center";tag.textContent="FIGURE";return gsap.timeline(loop).fromTo(box,{scale:0,rotationY:-40,opacity:0},{scale:1,rotationY:0,opacity:1,duration:.6,ease:"back.out(1.5)"}).to(box,{rotationY:18,duration:1.4,yoyo:true,repeat:1,ease:"sine.inOut"});};
+R.plush=el=>{const a=mk(el,"div");a.textContent="🧸";a.style.cssText="font-size:54px;filter:saturate(1.3) contrast(.9)";return gsap.timeline(loop).fromTo(a,{scale:0},{scale:1,duration:.5,ease:"elastic.out(1,.5)"}).to(a,{rotation:-8,duration:.6,yoyo:true,repeat:3,ease:"sine.inOut"});};
+R.claymation=el=>{const a=scene(el,"🗿");a.style.filter="contrast(1.1) saturate(1.2)";return gsap.timeline(loop).fromTo(a,{scaleX:.9,scaleY:1.1},{scaleX:1.05,scaleY:.95,duration:.5,ease:"sine.inOut",yoyo:true,repeat:3});};
+R.animefilter=grade("saturate(1.5) contrast(.95) brightness(1.08)","linear-gradient(135deg,#ffb3d955,#5ed4ff44)","🏞️");
+R.statue=grade("grayscale(1) contrast(1.3) brightness(1.05)","#cabfa033","🧍");
+R.facemorph=el=>{const a=mk(el,"div");a.textContent="😀";a.style.cssText="position:absolute;font-size:54px";const b=mk(el,"div");b.textContent="😎";b.style.cssText="position:absolute;font-size:54px;opacity:0";return gsap.timeline(loop).to(a,{opacity:0,filter:"blur(10px)",scale:1.2,duration:.6,delay:.5}).to(b,{opacity:1,filter:"blur(0)",duration:.6},"<").to(b,{opacity:0,filter:"blur(10px)",duration:.5,delay:.8}).set(a,{opacity:1,filter:"none",scale:1});};
+
+/* — SC 社群 UI — */
+R.subscribe=el=>{const b=mk(el,"div");b.textContent="訂閱";b.style.cssText="background:#e23;color:#fff;font-weight:800;font-size:16px;padding:9px 22px;border-radius:8px;box-shadow:0 4px 16px #e2333";const cur=mk(el,"div");cur.textContent="👆";cur.style.cssText="position:absolute;font-size:24px;left:56%;top:60%;opacity:0";return gsap.timeline(loop).fromTo(b,{scale:0},{scale:1,duration:.4,ease:"back.out(2)"}).to(b,{scale:1.08,duration:.4,yoyo:true,repeat:1,ease:"sine.inOut"}).fromTo(cur,{opacity:0,scale:1.3},{opacity:1,scale:1,duration:.3},"-=.5").to(b,{scale:.9,duration:.1,yoyo:true,repeat:1}).to([b,cur],{opacity:0,duration:.4,delay:.6});};
+R.likebomb=emojiFloat(["👍","❤️","🔥","😍"],{n:16,bg:"linear-gradient(0deg,#1a1015,#0a0608)",stagger:1.4});
+R.comment=el=>{const tl=gsap.timeline(loop);["太正啦🤤","邊度買?","已 follow","🔥🔥🔥"].forEach((t,i)=>{const c=mk(el,"div");c.textContent=t;c.style.cssText=`position:absolute;left:12px;bottom:${12+i*28}px;background:#222d;color:#fff;font-size:12px;padding:5px 10px;border-radius:12px;border:1px solid #444;opacity:0;white-space:nowrap`;tl.fromTo(c,{x:-60,opacity:0},{x:0,opacity:1,duration:.4},i*.4);});tl.to(el.children,{opacity:0,duration:.4,delay:.8});return tl;};
+R.follow=el=>{const w=mk(el,"div");w.style.cssText="display:flex;align-items:center;gap:8px;background:#16161b;border:1px solid var(--gold-d);padding:7px 12px;border-radius:30px";w.innerHTML='<div style="width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 50% 35%,#3a3a45,#15151b);display:flex;align-items:center;justify-content:center;font-size:16px">🍱</div><b style="color:#eee;font-size:13px">稻荷</b><span style="background:var(--gold);color:#1a1407;font-weight:800;font-size:12px;padding:3px 10px;border-radius:20px">+ 追蹤</span>';return gsap.timeline(loop).fromTo(w,{y:30,opacity:0},{y:0,opacity:1,duration:.5,ease:"back.out(1.6)"}).to(w,{y:30,opacity:0,duration:.4,delay:1.3});};
+R.progressbar=el=>{const t=mk(el,"div");t.style.cssText="width:75%;height:10px;border-radius:6px;background:#2a2a32;overflow:hidden";const f=mk(t,"div");f.style.cssText="height:100%;width:0;background:linear-gradient(90deg,var(--gold-d),var(--gold-l));border-radius:6px";const p=mk(el,"div");p.style.cssText="position:absolute;top:40px;color:var(--gold-l);font-weight:800;font-size:14px";const o={v:0};return gsap.timeline(loop).to(f,{width:"100%",duration:1.6,ease:"power1.inOut"}).to(o,{v:100,duration:1.6,onUpdate:()=>p.textContent=Math.round(o.v)+"%"},"<").to([t,p],{opacity:0,delay:.6,duration:.3}).set([t,p],{opacity:1}).set(f,{width:0}).set(o,{v:0});};
+R.countdown=el=>{const a=mk(el,"div");a.style.cssText="font-size:60px;font-weight:900;color:var(--gold-l)";const tl=gsap.timeline(loop);[3,2,1].forEach((n,i)=>tl.fromTo(a,{textContent:n,scale:1.6,opacity:0},{scale:1,opacity:1,duration:.4,ease:"back.out(2)"},i*.7).to(a,{opacity:0,duration:.2},i*.7+.55));tl.fromTo(a,{textContent:"GO!",scale:2,opacity:0,color:"#39d98a"},{scale:1,opacity:1,duration:.4}).to(a,{opacity:0,delay:.5,duration:.3}).set(a,{color:"var(--gold-l)"});return tl;};
+R.hashtag=el=>{const a=mk(el,"div","d-txt");a.style.cssText+=";color:#5ed4ff";a.textContent="#稻荷海膽";return gsap.timeline(loop).fromTo(a,{scale:0,rotation:-8,opacity:0},{scale:1,rotation:0,opacity:1,duration:.5,ease:"back.out(2)"}).to(a,{scale:1.1,duration:.3,yoyo:true,repeat:1}).to(a,{opacity:0,delay:.6,duration:.3});};
+R.swipeup=el=>{const a=mk(el,"div");a.style.cssText="display:flex;flex-direction:column;align-items:center;gap:4px;color:#fff;font-weight:700;font-size:13px";a.innerHTML='<div style="font-size:26px">☝️</div>Swipe Up';return gsap.timeline(loop).fromTo(a,{y:18,opacity:.4},{y:-18,opacity:1,duration:.7,yoyo:true,repeat:3,ease:"sine.inOut"});};
+R.rating=el=>{const w=mk(el,"div");w.style.cssText="display:flex;gap:6px;font-size:28px";const st=[];for(let i=0;i<5;i++){const s=mk(w,"div");s.textContent="★";s.style.color="#444";st.push(s);}const tl=gsap.timeline(loop);st.forEach((s,i)=>tl.to(s,{color:"#ffd24a",scale:1.3,duration:.2,ease:"back.out(3)"},i*.18).to(s,{scale:1,duration:.15},">"));tl.to(w,{opacity:0,delay:.8,duration:.3}).set(st,{color:"#444"});return tl;};
+R.share=el=>{const a=mk(el,"div");a.textContent="↗";a.style.cssText="font-size:28px;color:var(--gold-l);font-weight:900;border:2px solid var(--gold-d);border-radius:50%;width:52px;height:52px;display:flex;align-items:center;justify-content:center";const n=mk(el,"div");n.style.cssText="position:absolute;top:36px;right:74px;background:#e23;color:#fff;font-size:11px;font-weight:800;padding:2px 7px;border-radius:10px;opacity:0";n.textContent="+1";return gsap.timeline(loop).fromTo(a,{scale:.6,opacity:0},{scale:1,opacity:1,duration:.4,ease:"back.out(2)"}).fromTo(n,{y:10,opacity:0},{y:-6,opacity:1,duration:.4}).to([a,n],{opacity:0,delay:.9,duration:.3});};
+
+/* — AN 標註 — */
+R.arrow=el=>{scene(el,"🎯");el.insertAdjacentHTML("beforeend",'<svg width="100%" height="100%" style="position:absolute;inset:0" viewBox="0 0 260 142"><defs><marker id="ah" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff3b3b"/></marker></defs><path id="ar" d="M28,28 Q90,40 150,74" stroke="#ff3b3b" stroke-width="4" fill="none" marker-end="url(#ah)"/></svg>');const p=el.querySelector("#ar"),L=p.getTotalLength();gsap.set(p,{strokeDasharray:L,strokeDashoffset:L});return gsap.timeline(loop).to(p,{strokeDashoffset:0,duration:.7,ease:"power2.out",delay:.4}).to(p,{opacity:0,delay:1,duration:.3}).set(p,{opacity:1,strokeDashoffset:L});};
+R.circlehl=el=>{scene(el,"⭐");el.insertAdjacentHTML("beforeend",'<svg width="100%" height="100%" style="position:absolute;inset:0" viewBox="0 0 260 142"><path id="ci" d="M132,28 C182,30 202,80 150,105 C100,125 60,95 80,60 C95,35 120,30 138,33" stroke="#ffd24a" stroke-width="4" fill="none"/></svg>');const p=el.querySelector("#ci"),L=p.getTotalLength();gsap.set(p,{strokeDasharray:L,strokeDashoffset:L});return gsap.timeline(loop).to(p,{strokeDashoffset:0,duration:.8,ease:"power1.inOut",delay:.4}).to(p,{opacity:0,delay:1,duration:.3}).set(p,{opacity:1,strokeDashoffset:L});};
+R.underline=el=>{const a=mk(el,"div","d-txt");a.textContent="重點";a.style.color="#fff";el.insertAdjacentHTML("beforeend",'<svg width="120" height="20" style="position:absolute;bottom:36px"><path id="un" d="M5,10 Q40,2 60,10 T115,9" stroke="#ff3b3b" stroke-width="4" fill="none"/></svg>');const p=el.querySelector("#un"),L=p.getTotalLength();gsap.set(p,{strokeDasharray:L,strokeDashoffset:L});return gsap.timeline(loop).fromTo(a,{opacity:0,y:-6},{opacity:1,y:0,duration:.4}).to(p,{strokeDashoffset:0,duration:.5,ease:"power2.out"}).to([a,p],{opacity:0,delay:1,duration:.3}).set(p,{opacity:1,strokeDashoffset:L});};
+R.boxhl=el=>{scene(el,"🍱");el.insertAdjacentHTML("beforeend",'<svg width="100%" height="100%" style="position:absolute;inset:0" viewBox="0 0 260 142"><rect id="bx" x="68" y="34" width="124" height="76" rx="6" stroke="#39d98a" stroke-width="4" fill="none"/></svg>');const p=el.querySelector("#bx"),L=400;gsap.set(p,{strokeDasharray:L,strokeDashoffset:L});return gsap.timeline(loop).to(p,{strokeDashoffset:0,duration:.8,ease:"power1.inOut",delay:.4}).to(p,{opacity:0,delay:1,duration:.3}).set(p,{opacity:1,strokeDashoffset:L});};
+R.speech=el=>{const b=mk(el,"div");b.textContent="勁正！";b.style.cssText="background:#fff;color:#111;font-weight:800;font-size:16px;padding:10px 16px;border-radius:14px;position:relative";const tail=mk(b,"div");tail.style.cssText="position:absolute;bottom:-8px;left:20px;width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:10px solid #fff";return gsap.timeline(loop).fromTo(b,{scale:0,transformOrigin:"bottom left",opacity:0},{scale:1,opacity:1,duration:.4,ease:"back.out(2)"}).to(b,{scale:0,opacity:0,duration:.3,delay:1.2});};
+R.callout=el=>{scene(el,"🦀");const dot=mk(el,"div");dot.style.cssText="position:absolute;left:40%;top:55%;width:10px;height:10px;border-radius:50%;background:var(--gold-l);box-shadow:0 0 10px var(--gold)";const lbl=mk(el,"div");lbl.textContent="北海道直送";lbl.style.cssText="position:absolute;right:12px;top:22px;background:#000a;border:1px solid var(--gold-d);color:var(--gold-l);font-size:12px;padding:4px 9px;border-radius:6px;opacity:0";return gsap.timeline(loop).fromTo(dot,{scale:0},{scale:1,duration:.3}).fromTo(lbl,{x:20,opacity:0},{x:0,opacity:1,duration:.4}).to([dot,lbl],{opacity:0,delay:1,duration:.3});};
+R.mosaic=el=>{scene(el,"🙈");const m=mk(el,"div");m.style.cssText="position:absolute;left:38%;top:30%;width:70px;height:50px;background-image:conic-gradient(#888 90deg,#aaa 0 180deg,#777 0 270deg,#999 0);background-size:10px 10px;border-radius:4px;opacity:0";return gsap.timeline(loop).to(m,{opacity:1,duration:.3,delay:.4}).to(m,{opacity:1,duration:1}).to(m,{opacity:0,delay:.4,duration:.3});};
+R.tap=el=>{scene(el,"📱");const f=mk(el,"div");f.textContent="👆";f.style.cssText="position:absolute;font-size:30px;left:48%;top:48%";const ring=mk(el,"div");ring.style.cssText="position:absolute;left:50%;top:52%;width:30px;height:30px;border:3px solid var(--gold-l);border-radius:50%;transform:translate(-50%,-50%);opacity:0";return gsap.timeline(loop).fromTo(f,{scale:1.3,opacity:0},{scale:1,opacity:1,duration:.3}).to(f,{scale:.85,duration:.15,yoyo:true,repeat:1}).fromTo(ring,{scale:.4,opacity:.9},{scale:2.4,opacity:0,duration:.6},"<").to(f,{opacity:0,delay:.6,duration:.3});};
+
+/* — D3 3D — */
+R.extrude3d=el=>{el.style.perspective="500px";const a=mk(el,"div");a.textContent="3D";a.style.cssText="font-size:46px;font-weight:900;color:var(--gold-l);text-shadow:1px 1px 0 #9c7c1e,2px 2px 0 #9c7c1e,3px 3px 0 #7a6018,4px 4px 0 #5a460f,5px 5px 8px #000";return gsap.timeline(loop).fromTo(a,{rotationY:-50,opacity:0},{rotationY:20,opacity:1,duration:1,ease:"power2.out"}).to(a,{rotationY:-20,duration:1.4,yoyo:true,repeat:1,ease:"sine.inOut"});};
+R.parallax=el=>{const bg=scene(el,"🏔️","linear-gradient(#2a3a5a,#10182a)");const mid=mk(el,"div");mid.textContent="🌲🌲🌲";mid.style.cssText="position:absolute;bottom:28px;font-size:28px";const fg=mk(el,"div");fg.textContent="🦌";fg.style.cssText="position:absolute;bottom:16px;font-size:32px";return gsap.timeline({repeat:-1}).to(bg,{x:-12,duration:2.5,yoyo:true,repeat:-1,ease:"sine.inOut"},0).to(mid,{x:-28,duration:2.5,yoyo:true,repeat:-1,ease:"sine.inOut"},0).to(fg,{x:-50,duration:2.5,yoyo:true,repeat:-1,ease:"sine.inOut"},0);};
+R.orbit=el=>{const c=mk(el,"div");c.textContent="🍣";c.style.fontSize="32px";const o=mk(el,"div");o.textContent="🦐";o.style.cssText="position:absolute;font-size:22px";return gsap.timeline({repeat:-1}).to(o,{duration:2.5,ease:"none",motionPath:{path:[{x:50,y:0},{x:0,y:30},{x:-50,y:0},{x:0,y:-30},{x:50,y:0}],curviness:1.5}});};
+R.shatter=el=>{const a=scene(el,"🪞");const tl=gsap.timeline(loop);tl.to({},{duration:.5});for(let i=0;i<12;i++){const p=mk(el,"div");p.style.cssText=`position:absolute;left:${rnd(20,70)}%;top:${rnd(20,70)}%;width:${rnd(14,26)}px;height:${rnd(14,26)}px;background:linear-gradient(135deg,#9ad,#fff);clip-path:polygon(0 0,100% 30%,70% 100%);opacity:0`;tl.set(p,{opacity:1},.5).to(p,{x:rnd(-90,90),y:rnd(40,120),rotation:rnd(-180,180),opacity:0,duration:.9,ease:"power2.in"},.5);}tl.set(a,{opacity:0},.5).set(a,{opacity:1},"+=0.6");return tl;};
+R.cardstack=el=>{const tl=gsap.timeline(loop);["🍣","🦀","🍱"].forEach((e,i)=>{const c=mk(el,"div","d-card");c.textContent=e;c.style.cssText+=`position:absolute;font-size:22px`;tl.fromTo(c,{y:-60,rotation:rnd(-15,15),opacity:0},{y:i*-6,x:(i-1)*16,rotation:(i-1)*6,opacity:1,duration:.5,ease:"back.out(1.5)"},i*.25);});tl.to(el.children,{opacity:0,duration:.4,delay:1});return tl;};
+
+/* — DV 數據 — */
+R.barrace=el=>{const w=mk(el,"div");w.style.cssText="width:80%;display:flex;flex-direction:column;gap:8px";const data=[["🍣",.9,"#d4af37"],["🦀",.65,"#e07a3d"],["🦐",.4,"#5ed4ff"]];const bars=data.map(d=>{const row=mk(w,"div");row.style.cssText="display:flex;align-items:center;gap:6px;font-size:14px";mk(row,"div").textContent=d[0];const track=mk(row,"div");track.style.cssText="flex:1;height:15px;background:#2a2a32;border-radius:4px;overflow:hidden";const f=mk(track,"div");f.style.cssText=`height:100%;width:0;background:${d[2]};border-radius:4px`;return[f,d[1]];});const tl=gsap.timeline(loop);bars.forEach(([f,v],i)=>tl.to(f,{width:(v*100)+"%",duration:1,ease:"power2.out"},i*.15));tl.to(w,{opacity:0,delay:.9,duration:.3}).set(w,{opacity:1}).set(bars.map(b=>b[0]),{width:0});return tl;};
+R.piegrow=el=>{const p=mk(el,"div");p.style.cssText="width:88px;height:88px;border-radius:50%;background:conic-gradient(var(--gold) 0deg,#2a2a32 0deg)";const o={v:0};return gsap.timeline(loop).to(o,{v:280,duration:1.4,ease:"power2.out",onUpdate:()=>p.style.background=`conic-gradient(var(--gold) ${o.v}deg,#2a2a32 ${o.v}deg)`}).to(p,{opacity:0,delay:.8,duration:.3}).set(p,{opacity:1}).set(o,{v:0});};
+R.linegraph=el=>{el.insertAdjacentHTML("beforeend",'<svg width="200" height="108" viewBox="0 0 200 108"><polyline id="lg" points="10,95 50,70 90,80 130,35 190,15" fill="none" stroke="#39d98a" stroke-width="3"/></svg>');const p=el.querySelector("#lg"),L=215;gsap.set(p,{strokeDasharray:L,strokeDashoffset:L});return gsap.timeline(loop).to(p,{strokeDashoffset:0,duration:1.4,ease:"power1.inOut"}).to(p,{opacity:0,delay:.8,duration:.3}).set(p,{opacity:1,strokeDashoffset:L});};
+R.bigstat=el=>{const w=mk(el,"div");w.style.textAlign="center";const n=mk(w,"div");n.style.cssText="font-size:44px;font-weight:900;color:var(--gold-l);font-variant-numeric:tabular-nums";const lab=mk(w,"div");lab.textContent="滿意度";lab.style.cssText="color:var(--dim);font-size:13px;margin-top:2px";const o={v:0};return gsap.timeline(loop).to(o,{v:98,duration:1.3,ease:"power1.out",onUpdate:()=>n.textContent=Math.round(o.v)+"%"}).to(w,{opacity:0,delay:1,duration:.3}).set(w,{opacity:1}).set(o,{v:0});};
+R.ringprogress=el=>{el.insertAdjacentHTML("beforeend",'<svg width="98" height="98" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#2a2a32" stroke-width="9"/><circle id="rp" cx="50" cy="50" r="40" fill="none" stroke="var(--gold-l)" stroke-width="9" stroke-linecap="round" transform="rotate(-90 50 50)"/></svg>');const p=el.querySelector("#rp"),C=2*Math.PI*40;gsap.set(p,{strokeDasharray:C,strokeDashoffset:C});return gsap.timeline(loop).to(p,{strokeDashoffset:C*.15,duration:1.4,ease:"power2.out"}).to(p,{opacity:0,delay:.8,duration:.3}).set(p,{opacity:1,strokeDashoffset:C});};
+
+/* — BG 動態背景 — */
+R.matrix=el=>{el.style.background="#000";for(let i=0;i<14;i++){const c=mk(el,"div");c.style.cssText=`position:absolute;left:${i*7.2}%;top:0;color:#39d98a;font-family:monospace;font-size:13px;line-height:14px;writing-mode:vertical-rl;opacity:.85`;c.textContent=Array.from({length:10},()=>String.fromCharCode(0x30A0+Math.floor(rnd(0,90)))).join("");gsap.fromTo(c,{y:-160,opacity:0},{y:170,opacity:1,duration:rnd(1.5,3),ease:"none",repeat:-1,delay:rnd(0,1.5)});}return gsap.timeline(loop);};
+R.particlefield=el=>{scene(el,"","#0a0e18");const tl=gsap.timeline({repeat:-1});for(let i=0;i<24;i++){const d=mk(el,"div");d.style.cssText=`position:absolute;width:4px;height:4px;border-radius:50%;background:#5ed4ff;left:${rnd(0,100)}%;top:${rnd(0,100)}%;box-shadow:0 0 6px #5ed4ff`;tl.to(d,{x:rnd(-30,30),y:rnd(-30,30),duration:rnd(2,4),yoyo:true,repeat:-1,ease:"sine.inOut"},0);}return tl;};
+R.gradientflow=el=>{const a=mk(el,"div");a.style.cssText="position:absolute;inset:0;background:linear-gradient(135deg,#d4af37,#e0457b,#5ed4ff,#9c7c1e);background-size:300% 300%";return gsap.timeline(loop).fromTo(a,{backgroundPosition:"0% 50%"},{backgroundPosition:"100% 50%",duration:3,ease:"sine.inOut",yoyo:true,repeat:1});};
+R.gridscan=el=>{el.style.background="#060a12";el.style.perspective="300px";const g=mk(el,"div");g.style.cssText="position:absolute;inset:-20% 0 0 0;height:160%;background-image:linear-gradient(#0bf3 1px,transparent 1px),linear-gradient(90deg,#0bf3 1px,transparent 1px);background-size:28px 28px;transform:rotateX(60deg)";const ln=mk(el,"div");ln.style.cssText="position:absolute;left:0;width:100%;height:3px;background:linear-gradient(90deg,transparent,#5ef,transparent);box-shadow:0 0 12px #5ef";return gsap.timeline({repeat:-1}).fromTo(g,{backgroundPositionY:"0px"},{backgroundPositionY:"28px",duration:1,ease:"none",repeat:-1},0).fromTo(ln,{top:"0%",opacity:0},{top:"100%",opacity:1,duration:2,ease:"none",repeat:-1},0);};
+R.starfield=el=>{el.style.background="radial-gradient(#0a0e1a,#000)";const tl=gsap.timeline(loop);for(let i=0;i<30;i++){const s=mk(el,"div");s.style.cssText=`position:absolute;left:50%;top:50%;width:2px;height:2px;border-radius:50%;background:#fff`;const ang=rnd(0,Math.PI*2),dist=rnd(40,140);tl.fromTo(s,{x:0,y:0,scale:0,opacity:0},{x:Math.cos(ang)*dist,y:Math.sin(ang)*dist,scale:rnd(1,3),opacity:1,duration:rnd(1.2,2.2),ease:"power1.in"},rnd(0,1.6));}return tl;};
+R.aurora=el=>{el.style.background="#050810";const tl=gsap.timeline({repeat:-1});["#39d98a","#5ed4ff","#b05eff"].forEach((c,i)=>{const a=mk(el,"div");a.style.cssText=`position:absolute;left:-20%;top:${10+i*26}px;width:140%;height:60px;background:radial-gradient(ellipse,${c}55,transparent 70%);filter:blur(14px)`;tl.to(a,{x:rnd(-40,40),scaleY:rnd(.7,1.4),duration:rnd(2.5,4),yoyo:true,repeat:-1,ease:"sine.inOut"},0);});return tl;};
 
 /* ============ 頁面 ============ */
 const app=document.getElementById("app"),tabsEl=document.getElementById("tabs");
