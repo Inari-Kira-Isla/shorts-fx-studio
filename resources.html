@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>素材・工具資源 — Shorts FX Studio</title>
+<style>
+  :root{--bg:#08080a;--card:#16161b;--gold:#d4af37;--gold-l:#f0c75e;--gold-d:#9c7c1e;--txt:#eee;--dim:#8a8a93;--line:#2a2a32;--ok:#39d98a}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--txt);font-family:"PingFang TC","Noto Sans TC","Hiragino Sans",-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--gold-l);text-decoration:none}
+  header{position:sticky;top:0;z-index:50;background:#0a0a0cf2;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:16px 22px}
+  .brand{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .brand h1{font-size:23px;font-weight:800;background:linear-gradient(90deg,var(--gold),var(--gold-l),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .brand .sub{color:var(--dim);font-size:12.5px}
+  .back{margin-top:10px;display:inline-block;font-size:13px;color:var(--dim);border:1px solid var(--line);padding:5px 12px;border-radius:8px}
+  .back:hover{color:var(--gold-l);border-color:var(--gold-d)}
+  main{padding:24px 22px 70px;max-width:1100px;margin:0 auto}
+  .intro{color:var(--dim);font-size:13.5px;line-height:1.7;margin-bottom:26px;border-left:3px solid var(--gold-d);padding-left:14px}
+  .sec{margin-bottom:34px}
+  .sec-h{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+  .sec-h .ic{font-size:21px}
+  .sec-h h2{font-size:18px;font-weight:700}
+  .sec-h .en{color:var(--gold-d);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
+  .item{display:block;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:13px 15px;transition:.15s}
+  .item:hover{border-color:var(--gold-d);transform:translateY(-2px);box-shadow:0 8px 22px #0007}
+  .item .t{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .item .t b{font-size:14.5px;color:var(--txt)}
+  .item p{color:var(--dim);font-size:12.5px;line-height:1.5;margin-top:5px}
+  .badge{font-size:10px;padding:1px 7px;border-radius:5px;font-weight:700;white-space:nowrap}
+  .b-free{background:#0d2a1c;color:var(--ok);border:1px solid #1c5a3c}
+  .b-cc0{background:#0d2230;color:#5ed4ff;border:1px solid #1c4a5a}
+  .b-attr{background:#2a2410;color:var(--gold-l);border:1px solid var(--gold-d)}
+  .b-oss{background:#241a2e;color:#c79cff;border:1px solid #5a3c7a}
+  .b-api{background:#2a1818;color:#ff8a8a;border:1px solid #7a3c3c}
+  .b-paid{background:#222;color:#aaa;border:1px solid #444}
+  .note{background:#16161b;border:1px dashed var(--gold-d);border-radius:11px;padding:14px 16px;font-size:12.5px;line-height:1.7;color:#cfc8b0}
+  .note b{color:var(--gold-l)}
+  code{background:#0c0c10;border:1px solid var(--line);padding:1px 6px;border-radius:5px;font-size:12px;color:#cfe}
+  footer{color:var(--dim);font-size:12px;text-align:center;padding:0 0 40px}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <h1>🧰 素材・工具資源</h1>
+    <span class="sub">短片製作可下載資源全集 · 免費 / 開源 / 可商用</span>
+  </div>
+  <a class="back" href="./index.html">← 返回 157 種特效目錄</a>
+</header>
+
+<main>
+  <div class="intro">
+    呢頁集齊做短片用到嘅可下載資源：通用片段(B-roll)、特效素材(光漏/顆粒/LUT)、開源 AI 模型、AI 卡通工具、Lottie 動畫。
+    每項標明授權 — <span class="badge b-cc0">CC0 免署名</span> <span class="badge b-free">免費商用</span>
+    <span class="badge b-attr">免費需署名</span> <span class="badge b-oss">開源</span> <span class="badge b-api">免費 API</span>。
+    用前請自行確認最新授權條款。
+  </div>
+
+  <!-- 1 B-roll -->
+  <section class="sec">
+    <div class="sec-h"><span class="ic">🎞️</span><h2>通用片段 / 空鏡（B-roll）</h2><span class="en">Stock Footage</span></div>
+    <div class="grid">
+      <a class="item" href="https://www.pexels.com/videos/" target="_blank"><div class="t"><b>Pexels Video</b><span class="badge b-free">免費商用</span><span class="badge b-api">免費 API</span></div><p>質感最高、有免費 API（已接入本站 broll 模組）。直度片啱 Reels。</p></a>
+      <a class="item" href="https://pixabay.com/videos/" target="_blank"><div class="t"><b>Pixabay Video</b><span class="badge b-cc0">CC0 免署名</span><span class="badge b-api">免費 API</span></div><p>CC0 完全免署名，可自由改修商用。亦有免費 API。</p></a>
+      <a class="item" href="https://mixkit.co/free-stock-video/" target="_blank"><div class="t"><b>Mixkit</b><span class="badge b-free">免費商用</span></div><p>片段 + 模板 + 音樂音效，質感佳。</p></a>
+      <a class="item" href="https://www.videvo.net/" target="_blank"><div class="t"><b>Videvo</b><span class="badge b-attr">部分需署名</span></div><p>50 萬+ 素材，HD–4K，數量最多。</p></a>
+      <a class="item" href="https://coverr.co/" target="_blank"><div class="t"><b>Coverr</b><span class="badge b-free">免費商用</span></div><p>生活風、城市、自然空鏡，質感統一。</p></a>
+      <a class="item" href="https://www.dareful.com/" target="_blank"><div class="t"><b>Dareful</b><span class="badge b-attr">需署名</span></div><p>4K 空拍、煙火、高山、海灘等大景。</p></a>
+      <a class="item" href="https://archive.org/details/movies" target="_blank"><div class="t"><b>Internet Archive</b><span class="badge b-cc0">公共領域</span></div><p>大量舊片 / 公共領域影像，懷舊素材寶庫。</p></a>
+    </div>
+  </section>
+
+  <!-- 2 特效素材 -->
+  <section class="sec">
+    <div class="sec-h"><span class="ic">✨</span><h2>特效素材（光漏 / 顆粒 / LUT / 粒子）</h2><span class="en">VFX Overlays & LUTs</span></div>
+    <div class="grid">
+      <a class="item" href="https://mixkit.co/free-stock-video/light-leak/" target="_blank"><div class="t"><b>Mixkit Light Leaks</b><span class="badge b-free">免費商用</span></div><p>大量光漏 overlay，直接疊片用。</p></a>
+      <a class="item" href="https://vegasaur.com/free-light-leaks" target="_blank"><div class="t"><b>Vegasaur</b><span class="badge b-free">免費</span></div><p>真 35mm 顆粒、20 光漏、塵粒影片。</p></a>
+      <a class="item" href="https://www.rocketstock.com/free-after-effects-templates/" target="_blank"><div class="t"><b>RocketStock</b><span class="badge b-attr">需 email</span></div><p>13× 4K 光漏 + 16× 體積光/塵 overlay。</p></a>
+      <a class="item" href="https://mycreativefx.com/blog/5000-free-vfx-download-4k-overlays-transitions-effects-mycreativef" target="_blank"><div class="t"><b>MyCreativeFX</b><span class="badge b-attr">查授權</span></div><p>5000+ overlay、轉場、LUT、鏡頭污漬。</p></a>
+      <a class="item" href="https://grainzilla.com/" target="_blank"><div class="t"><b>Grainzilla</b><span class="badge b-free">免費</span></div><p>菲林顆粒變化 + LUT。</p></a>
+      <a class="item" href="https://freshluts.com/browse" target="_blank"><div class="t"><b>FreshLUTs</b><span class="badge b-attr">部分免費</span></div><p>大量電影調色 LUT（.cube），ffmpeg 可直接套。</p></a>
+    </div>
+  </section>
+
+  <!-- 3 開源 AI 圖片模型 -->
+  <section class="sec">
+    <div class="sec-h"><span class="ic">🧠</span><h2>開源 AI 圖片模型（風格化 / 生成）</h2><span class="en">Open-Source Models</span></div>
+    <div class="grid">
+      <a class="item" href="https://huggingface.co/models?pipeline_tag=text-to-image" target="_blank"><div class="t"><b>Hugging Face</b><span class="badge b-oss">模型中樞</span></div><p>所有開源底模下載：FLUX、SD3.5、SDXL…</p></a>
+      <a class="item" href="https://civitai.com/" target="_blank"><div class="t"><b>Civitai</b><span class="badge b-oss">LoRA 中樞</span></div><p>公仔化/吉卜力/動漫風格 LoRA 一大堆，搜 figurine/ghibli。</p></a>
+      <a class="item" href="https://huggingface.co/black-forest-labs/FLUX.1-schnell" target="_blank"><div class="t"><b>FLUX.1 schnell</b><span class="badge b-oss">Apache 2.0</span></div><p>最強開源生成；需 12–16GB VRAM（建議雲端）。</p></a>
+      <a class="item" href="https://stability.ai/stable-diffusion" target="_blank"><div class="t"><b>SD 3.5 / SDXL Turbo</b><span class="badge b-oss">開放</span></div><p>生態最大 + LoRA 庫；SDXL Turbo ~8GB 可跑。</p></a>
+      <a class="item" href="https://github.com/comfyanonymous/ComfyUI" target="_blank"><div class="t"><b>ComfyUI</b><span class="badge b-oss">節點式</span></div><p>跑/串接以上模型的開源 UI。</p></a>
+      <a class="item" href="https://drawthings.ai/" target="_blank"><div class="t"><b>Draw Things</b><span class="badge b-free">Mac 原生</span></div><p>Mac 原生跑 SD，8GB 機跑 SD1.5+LoRA 最實際。</p></a>
+    </div>
+  </section>
+
+  <!-- 4 開源實用工具 -->
+  <section class="sec">
+    <div class="sec-h"><span class="ic">🔧</span><h2>開源實用工具（去背 / 放大 / 插幀 / 修臉）</h2><span class="en">Utility Models · Mac/CPU 跑到</span></div>
+    <div class="grid">
+      <a class="item" href="https://github.com/danielgatis/rembg" target="_blank"><div class="t"><b>rembg</b><span class="badge b-oss">MIT</span></div><p>一鍵去背（CLI/Python/Docker）。</p></a>
+      <a class="item" href="https://github.com/xinntao/Real-ESRGAN" target="_blank"><div class="t"><b>Real-ESRGAN</b><span class="badge b-oss">BSD</span></div><p>圖片/影片放大修復。</p></a>
+      <a class="item" href="https://github.com/megvii-research/ECCV2022-RIFE" target="_blank"><div class="t"><b>RIFE</b><span class="badge b-oss">MIT</span></div><p>影片插幀，做絲滑慢動作。</p></a>
+      <a class="item" href="https://github.com/TencentARC/GFPGAN" target="_blank"><div class="t"><b>GFPGAN / CodeFormer</b><span class="badge b-oss">開放</span></div><p>修復 / 增強人臉。</p></a>
+      <a class="item" href="https://github.com/facebookresearch/segment-anything" target="_blank"><div class="t"><b>Segment Anything (SAM)</b><span class="badge b-oss">Apache</span></div><p>任意物件遮罩，做 body 效果用。</p></a>
+    </div>
+  </section>
+
+  <!-- 5 AI 卡通 / 連貫角色 -->
+  <section class="sec">
+    <div class="sec-h"><span class="ic">🎬</span><h2>AI 卡通 / 連貫角色影片工具</h2><span class="en">Consistent-Character Animation</span></div>
+    <div class="grid">
+      <a class="item" href="https://www.civitai.com/" target="_blank"><div class="t"><b>角色 LoRA（Civitai）</b><span class="badge b-oss">開源</span></div><p>15–50 張圖訓一個角色，鎖死樣貌一致性（最強）。</p></a>
+      <a class="item" href="https://www.midjourney.com/" target="_blank"><div class="t"><b>Midjourney v7 Omni Ref</b><span class="badge b-paid">付費</span></div><p>參考圖（--cref）保持角色一致，免訓練。</p></a>
+      <a class="item" href="https://pika.art/" target="_blank"><div class="t"><b>Pika</b><span class="badge b-paid">免費額度</span></div><p>卡通/動漫動畫最強，角色動得自然。</p></a>
+      <a class="item" href="https://klingai.com/" target="_blank"><div class="t"><b>Kling / Runway / Hailuo</b><span class="badge b-paid">免費額度</span></div><p>圖生影片 i2v，把定格圖動起來；你已用 MiniMax Hailuo。</p></a>
+      <a class="item" href="https://www.revid.ai/tools/ai-cartoon-video-generator" target="_blank"><div class="t"><b>Revid.ai</b><span class="badge b-paid">付費</span></div><p>劇本→一致角色卡通片一條龍。</p></a>
+      <a class="item" href="https://www.neolemon.com/blog/best-ai-tools-for-animated-storytelling/" target="_blank"><div class="t"><b>Videoinu / AutoDraft</b><span class="badge b-paid">付費</span></div><p>character seed 系統，連載式 faceless 頻道專用。</p></a>
+    </div>
+  </section>
+
+  <!-- 6 Lottie -->
+  <section class="sec">
+    <div class="sec-h"><span class="ic">💫</span><h2>Lottie / 動態圖形</h2><span class="en">Lottie Animations</span></div>
+    <div class="grid">
+      <a class="item" href="https://lottiefiles.com/" target="_blank"><div class="t"><b>LottieFiles</b><span class="badge b-free">大量免費</span></div><p>最大 Lottie 庫，可線上編輯匯出 JSON/GIF。</p></a>
+      <a class="item" href="https://iconscout.com/lottie-animations" target="_blank"><div class="t"><b>IconScout</b><span class="badge b-free">部分免費</span></div><p>動畫圖標 + 可自訂配色。</p></a>
+      <a class="item" href="https://lordicon.com/" target="_blank"><div class="t"><b>Lordicon</b><span class="badge b-free">部分免費</span></div><p>18,500+ 動畫圖標，多風格。</p></a>
+      <a class="item" href="https://icons8.com/animated-icons" target="_blank"><div class="t"><b>Icons8</b><span class="badge b-attr">需署名</span></div><p>GIF + After Effects 原檔(AEP)可改。</p></a>
+    </div>
+  </section>
+
+  <!-- 7 自動化模組 -->
+  <section class="sec">
+    <div class="sec-h"><span class="ic">⚙️</span><h2>本站自動化模組</h2><span class="en">Auto B-roll Module</span></div>
+    <div class="note">
+      <b>broll_fetch.py</b> — 文案自動配空鏡（已接入 Pexels/Pixabay API）<br>
+      路徑：<code>~/.openclaw/workspace/video-shorts/broll/broll_fetch.py</code><br><br>
+      <b>用法</b>：<br>
+      • 單關鍵字：<code>python3 broll_fetch.py --query "sea urchin sushi" --count 3</code><br>
+      • 整份文案逐句配片（中文自動翻英）：<code>python3 broll_fetch.py --script script.txt --translate</code><br>
+      • 抓完拼成一條 1080×1920 墊片：<code>--stitch 4</code><br><br>
+      原理：文案逐句 → Gemma 4 翻英文關鍵字 → Pexels/Pixabay API 搜直度片 → 下載 → ffmpeg 拼接。
+      正正係 YouTube 講解片「一句話配一段空鏡」嘅自動化做法。叫 Claude「<code>/shorts-fx 幫我用 broll 配片</code>」即可。
+    </div>
+  </section>
+</main>
+
+<footer>Shorts FX Studio · 資源頁 · 授權以各站最新條款為準</footer>
+</body>
+</html>
