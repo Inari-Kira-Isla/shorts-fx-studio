@@ -79,13 +79,15 @@
   footer a{text-decoration:none}
   /* 手機細部優化（單欄不變，預覽 px 座標不受影響） */
   @media(max-width:600px){
-    header{padding:12px 15px 10px}
+    header{position:static;padding:12px 15px 10px}   /* 取消 sticky：可滑走，唔再霸住下面預覽 */
     .brand{gap:9px}
     .brand h1{font-size:20px}
     .brand .sub{font-size:11.5px}
     .tools{margin-top:9px;gap:8px}
     #search{max-width:none;padding:10px 12px;font-size:16px}
-    .tab{padding:7px 13px;font-size:13px}
+    .tabs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}  /* 13 膠囊單行橫捲，唔再疊成 6 行 */
+    .tabs::-webkit-scrollbar{display:none}
+    .tab{flex:0 0 auto;padding:7px 13px;font-size:13px}
     main{padding:16px 13px 154px}
     .cat{margin-bottom:26px}
     .cat-h .sel-all{padding:7px 12px;font-size:12.5px}
